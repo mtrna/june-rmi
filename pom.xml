@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.juneframework</groupId>
 	<artifactId>june-rmi</artifactId>
-	<version>5.3.36-SNAPSHOT</version>
+	<version>5.3.36</version>
 	<packaging>jar</packaging>
 
 	<licenses>
@@ -14,9 +14,11 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:git://github.com/mtrna/june-rmi</connection>
+		<connection>scm:git:git://github.com/mtrna/june-rmi.git</connection>
 		<url>https://github.com/mtrna/june-rmi</url>
 	</scm>
+	<url>https://github.com/mtrna/june-rmi</url>
+	<description>Substitution for Spring RMI</description>
 
 	<developers>
 		<developer>
@@ -56,6 +58,20 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId><version>3.6.3</version>
 				<executions><execution><id>attach-javadocs</id><goals><goal>jar</goal></goals></execution></executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.1</version>
+				<configuration>
+					<archive><manifestFile>${project.basedir}/src/main/resources/META-INF/MANIFEST.MF</manifestFile></archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.central</groupId><artifactId>central-publishing-maven-plugin</artifactId><version>0.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<publishingServerId>central</publishingServerId>
+					<tokenAuth>true</tokenAuth>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
