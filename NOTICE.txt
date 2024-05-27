@@ -1,0 +1,6 @@
+This product includes software developed at the original Spring Framework project (https://spring.io/projects).
+
+Modifications:
+- This library contains functionality of Spring remoting (RMI, HTTP invoker)
+
+Intended use case for the library is migration from Spring 5 to Spring 6.

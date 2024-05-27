@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.juneframework</groupId>
+	<artifactId>june-rmi</artifactId>
+	<version>5.3.36-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git://github.com/mtrna/june-rmi</connection>
+		<url>https://github.com/mtrna/june-rmi</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Michal Trna</name>
+			<email>michal.trna@gmail.com</email>
+			<organization>-</organization>
+			<organizationUrl>https://github.com/mtrna/</organizationUrl>
+		</developer>
+	</developers>
+
+	<distributionManagement>
+		<repository><id>ossrh</id><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></repository>
+		<snapshotRepository><id>ossrh</id><url>https://oss.sonatype.org/content/repositories/snapshots/</url></snapshotRepository>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency><groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><version>3.1.0</version><scope>provided</scope></dependency>
+		<dependency><groupId>org.apache.httpcomponents</groupId><artifactId>httpclient</artifactId><version>4.5.14</version></dependency>
+		<dependency><groupId>org.springframework</groupId><artifactId>spring-aop</artifactId><version>5.3.36</version><scope>provided</scope></dependency>
+		<dependency><groupId>org.springframework</groupId><artifactId>spring-beans</artifactId><version>5.3.36</version><scope>provided</scope></dependency>
+		<dependency><groupId>org.springframework</groupId><artifactId>spring-context</artifactId><version>5.3.36</version><scope>provided</scope></dependency>
+		<dependency><groupId>org.springframework</groupId><artifactId>spring-core</artifactId><version>5.3.36</version><scope>provided</scope></dependency>
+		<dependency><groupId>org.springframework</groupId><artifactId>spring-web</artifactId><version>5.3.36</version><scope>provided</scope></dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version></plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-gpg-plugin</artifactId><version>3.2.4</version>
+				<executions><execution><id>sign-artifacts</id><phase>verify</phase><goals><goal>sign</goal></goals></execution></executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-source-plugin</artifactId><version>3.3.1</version>
+				<executions><execution><id>attach-sources</id><goals><goal>jar</goal></goals></execution></executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId><version>3.6.3</version>
+				<executions><execution><id>attach-javadocs</id><goals><goal>jar</goal></goals></execution></executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
