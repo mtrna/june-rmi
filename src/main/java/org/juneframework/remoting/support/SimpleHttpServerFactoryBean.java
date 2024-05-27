@@ -54,7 +54,6 @@ import org.springframework.beans.factory.InitializingBean;
  * @deprecated as of Spring Framework 5.1, in favor of embedded Tomcat/Jetty/Undertow
  */
 @Deprecated
-@org.springframework.lang.UsesSunHttpServer
 public class SimpleHttpServerFactoryBean implements FactoryBean<HttpServer>, InitializingBean, DisposableBean {
 
 	protected final Log logger = LogFactory.getLog(getClass());

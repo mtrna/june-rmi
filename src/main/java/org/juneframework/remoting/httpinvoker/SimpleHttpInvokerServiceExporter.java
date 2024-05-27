@@ -58,7 +58,6 @@ import org.juneframework.remoting.support.RemoteInvocationResult;
  * @deprecated as of Spring Framework 5.1, in favor of {@link HttpInvokerServiceExporter}
  */
 @Deprecated
-@org.springframework.lang.UsesSunHttpServer
 public class SimpleHttpInvokerServiceExporter extends RemoteInvocationSerializingExporter implements HttpHandler {
 
 	/**
