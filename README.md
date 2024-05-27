@@ -10,16 +10,21 @@ This library is drop-in substitution for the lost functionality.
 <dependency><groupId>org.juneframework</groupId><artifactId>org.juneframework.june-rmi</artifactId><version>5.3.36</version></dependency>
 ```
 
-2. Replace `org.springframework.remoting.*` imports in your `.java` files, e.g.: 
+2. Replace `org.springframework.remoting.*` imports in your `.java` files, e.g. following: 
 ```java
 import org.springframework.remoting.RemoteAccessException;
 ```
-
+substitute by
 ```java
 import org.juneframework.remoting.RemoteAccessException;
 ```
 
-Functionality of `june-rmi` was tested in Spring 5.x and Spring 6.x.
+3. Migrate to Spring 6 and update the june-rmi dependency.
+```xml
+<dependency><groupId>org.juneframework</groupId><artifactId>org.juneframework.june-rmi</artifactId><version>6.0.21</version></dependency>
+```
+
+Functionality of `june-rmi` was tested in Spring 5.3.x and Spring 6.0.x.
 
 Spring ends in June, hence the name.
 
